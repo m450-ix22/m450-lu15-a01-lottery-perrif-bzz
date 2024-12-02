@@ -11,10 +11,10 @@ def read_int(prompt, minimum, maximum):
         try:
             number = int(input(prompt))
             if number < minimum or number > maximum:
-                print('Eingabe ist zu gross oder zu klein')
+                print("Eingabe ist zu gross oder zu klein")
                 number = None
         except ValueError:
-            print('Geben Sie eine Ganzzahl ein')
+            print("Geben Sie eine Ganzzahl ein")
 
     return number
 
@@ -32,13 +32,13 @@ def read_float(prompt, minimum, maximum):
         try:
             number = float(input(prompt))
             if number < minimum or number > maximum:
-                print('Eingabe ist zu gross oder zu klein')
+                print("Eingabe ist zu gross oder zu klein")
                 number = None
         except ValueError:
-            print('Geben Sie eine Zahl ein')
+            print("Geben Sie eine Zahl ein")
 
     return number
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     pass

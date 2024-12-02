@@ -3,11 +3,11 @@ def show_menu():
     shows the main menu
     :return:
     """
-    print('Lotto')
-    print('---------')
-    print('A) Konto Ein- und Auszahlungen tätigen')
-    print('B) Lottotipps abgeben')
-    print('Z) Beenden')
+    print("Lotto")
+    print("---------")
+    print("A) Konto Ein- und Auszahlungen tätigen")
+    print("B) Lottotipps abgeben")
+    print("Z) Beenden")
 
 
 def select_menu():
@@ -16,15 +16,15 @@ def select_menu():
     :return: the selected option
     """
     show_menu()
-    selection = ''
-    while selection == '':
-        user_input = input('Ihre Wahl > ')
-        if user_input in ['A', 'B', 'Z']:
+    selection = ""
+    while selection == "":
+        user_input = input("Ihre Wahl > ")
+        if user_input in ["A", "B", "Z"]:
             selection = user_input
         else:
-            print('Bitte geben Sie eine gültige Wahl ein')
+            print("Bitte geben Sie eine gültige Wahl ein")
 
     return selection
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     pass

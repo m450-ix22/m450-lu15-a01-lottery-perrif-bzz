@@ -27,27 +27,27 @@ def ticket():
 
 def test_create_ticket_sufficient_bal(person_max, capsys, monkeypatch):
     inputs = iter([5, 10, 15, 20, 25, 30, 3])
-    monkeypatch.setattr('lottery.read_int', lambda *args, **kwargs: next(inputs))
+    monkeypatch.setattr("lottery.read_int", lambda *args, **kwargs: next(inputs))
 
-    monkeypatch.setattr('lottery.print_ticket', lambda ticket: None)
+    monkeypatch.setattr("lottery.print_ticket", lambda ticket: None)
 
     create_ticket(person_max)
 
     assert person_max.balance == 998.00
 
     output = capsys.readouterr().out
-    assert output == 'Dein neues Guthaben: 998.00\n'
+    assert output == "Dein neues Guthaben: 998.00\n"
 
 
 def test_create_ticket_insufficient_bal(person_tiago, capsys):
     create_ticket(person_tiago)
     output = capsys.readouterr().out
-    assert output == 'Zuwenig Guthaben\n'
+    assert output == "Zuwenig Guthaben\n"
 
 
 def test_select_numbers_success(ticket_empty, monkeypatch):
     inputs = iter([5, 10, 15, 20, 25, 30, 3])
-    monkeypatch.setattr('lottery.read_int', lambda *args, **kwargs: next(inputs))
+    monkeypatch.setattr("lottery.read_int", lambda *args, **kwargs: next(inputs))
 
     select_numbers(ticket_empty)
 
@@ -57,12 +57,12 @@ def test_select_numbers_success(ticket_empty, monkeypatch):
 
 def test_select_numbers_dupe_number(ticket_empty, monkeypatch, capsys):
     inputs = iter([5, 10, 10, 15, 20, 25, 30, 6])
-    monkeypatch.setattr('lottery.read_int', lambda *args, **kwargs: next(inputs))
+    monkeypatch.setattr("lottery.read_int", lambda *args, **kwargs: next(inputs))
 
     select_numbers(ticket_empty)
 
     output = capsys.readouterr().out
-    assert 'Diese Zahl haben Sie schon gewählt' in output
+    assert "Diese Zahl haben Sie schon gewählt" in output
     assert ticket_empty.numbers == [5, 10, 15, 20, 25, 30]
     assert ticket_empty.joker == 6
 

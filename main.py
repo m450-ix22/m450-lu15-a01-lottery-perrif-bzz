@@ -6,14 +6,14 @@ from money import transfer_money
 
 def main():
     person = login()
-    item = ''
-    while item != 'Z':
+    item = ""
+    while item != "Z":
         item = select_menu()
-        if item == 'A':
+        if item == "A":
             transfer_money(person)
-        elif item == 'B':
+        elif item == "B":
             create_ticket(person)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

@@ -12,8 +12,8 @@ def test_show_menu(capsys):
 
 
 def test_select_menu(monkeypatch):
-    inputs = iter(['A', 'B', 'Z'])
-    monkeypatch.setattr('builtins.input', lambda _: next(inputs))
-    assert select_menu() == 'A'
-    assert select_menu() == 'B'
-    assert select_menu() == 'Z'
+    inputs = iter(["A", "B", "Z"])
+    monkeypatch.setattr("builtins.input", lambda _: next(inputs))
+    assert select_menu() == "A"
+    assert select_menu() == "B"
+    assert select_menu() == "Z"
